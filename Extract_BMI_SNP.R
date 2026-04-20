@@ -25,6 +25,9 @@ mr_common("BMI_MVP_European.txt", "example.tsv",local_clump=T,p1=5e-6,
 #3 Extract significant BMI-associated loci in the GLP1R region from the UKB cohort
 mr_common("BMI_UKB_European.txt", "example.tsv",p1=5e-8,
           r2=0.3, kb=100, gene="GLP1R", eaf_threshold = 0.01, gene_win=100)
+#As no significant BMI-associated loci in the GLP1R region could be extracted from the UKB cohort, attempt to relax the threshold for extraction
+mr_common("BMI_UKB_European.txt", "example.tsv",local_clump=T,p1=5e-6,
+          r2=0.3, kb=100, gene="GLP1R", eaf_threshold = 0.01, gene_win=100)
 
 #4 Extract significant BMI-associated loci in the GIP/GIPR region from the UKB cohort
 mr_common("BMI_UKB_European.txt", "example.tsv",p1=5e-8,
